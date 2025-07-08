@@ -1,10 +1,9 @@
-<!DOCTYPE html> 
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900"/>
-  <title>오늘 날짜</title>
+  <meta charset="UTF-8">
+  <title>오늘 날짜 박스</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900" rel="stylesheet">
   <style>
     body {
       background-color: white;
@@ -13,55 +12,74 @@
       padding-top: 100px;
     }
 
-    #dateBox {
-      display: inline-block;
-      padding: 30px;
-      background: #276FBF;
-      color: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .label {
-      font-size: 1em;
-      letter-spacing: 3px;
+    #date-container {
       text-transform: uppercase;
-      margin-bottom: 10px;
+      letter-spacing: 2px;
     }
 
-    .date {
+    .box {
+      display: inline-block;
+      padding: 20px;
+      width: 100px;
+      margin: 10px;
+      border-radius: 8px;
       font-family: 'Montserrat', sans-serif;
-      font-size: 2.5em;
-      font-weight: bold;
+      font-size: 2em;
+      color: #ffffff;
+    }
+
+    .year {
+      background-color: #EF2F3C;
+    }
+
+    .month {
+      background-color: #276FBF;
     }
 
     .day {
-      margin-top: 10px;
-      font-size: 1.2em;
-      color: #f0f0f0;
+      background-color: #F0A202;
+    }
+
+    .weekday {
+      background-color: #183059;
+    }
+
+    .label {
+      margin-top: 5px;
+      font-size: 0.6em;
+      color: #444444;
     }
   </style>
 </head>
 <body>
 
-  <div id="dateBox">
-    <div class="label">오늘 날짜</div>
-    <div id="today" class="date"></div>
-    <div id="dayOfWeek" class="day"></div>
+  <div id="date-container">
+    <div class="box year">
+      <div id="year"></div>
+      <div class="label">Year</div>
+    </div>
+    <div class="box month">
+      <div id="month"></div>
+      <div class="label">Month</div>
+    </div>
+    <div class="box day">
+      <div id="date"></div>
+      <div class="label">Date</div>
+    </div>
+    <div class="box weekday">
+      <div id="weekday"></div>
+      <div class="label">Day</div>
+    </div>
   </div>
 
   <script>
     const today = new Date();
-
-    const year = today.getFullYear();
-    const month = today.getMonth() + 1; // 0부터 시작
-    const date = today.getDate();
-
     const weekdays = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
-    const day = weekdays[today.getDay()];
 
-    document.getElementById("today").textContent = `${year}년 ${month}월 ${date}일`;
-    document.getElementById("dayOfWeek").textContent = `(${day})`;
+    document.getElementById("year").textContent = today.getFullYear();
+    document.getElementById("month").textContent = today.getMonth() + 1;
+    document.getElementById("date").textContent = today.getDate();
+    document.getElementById("weekday").textContent = weekdays[today.getDay()];
   </script>
 
 </body>
