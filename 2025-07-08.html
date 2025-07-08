@@ -2,34 +2,39 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>오늘 날짜 박스 (2x2 배열)</title>
+  <title>오늘 날짜 박스 (2x2 정사각형)</title>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900" rel="stylesheet">
   <style>
-    body {
+    html, body {
+      margin: 0;
+      padding: 0;
       background-color: white;
       font-family: 'Lato', sans-serif;
       text-align: center;
-      padding-top: 100px;
     }
 
     #date-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      gap: 10px;
       justify-content: center;
       align-items: center;
       width: fit-content;
-      margin: 0 auto;
+      margin: 10px auto 0 auto;
     }
 
     .box {
-      padding: 20px;
       width: 100px;
+      height: 100px;
       border-radius: 8px;
+      background-color: #ebebeb;
       font-family: 'Montserrat', sans-serif;
-      font-size: 1em;
+      font-size: 1.2em;
       color: #183059;
-      background-color: #eeeeee;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     .label {
