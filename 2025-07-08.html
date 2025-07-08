@@ -24,24 +24,24 @@
       margin: 10px;
       border-radius: 8px;
       font-family: 'Montserrat', sans-serif;
-      font-size: 2em;
+      font-size: 1em;
       color: #ffffff;
     }
 
     .year {
-      background-color: #EF2F3C;
+      background-color: #eeeeee;
     }
 
     .month {
-      background-color: #276FBF;
+      background-color: #eeeeee;
     }
 
     .day {
-      background-color: #F0A202;
+      background-color: #eeeeee;
     }
 
     .weekday {
-      background-color: #183059;
+      background-color: #eeeeee;
     }
 
     .label {
@@ -74,7 +74,7 @@
 
   <script>
     const today = new Date();
-    const weekdays = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
+    const weekdays = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
     document.getElementById("year").textContent = today.getFullYear();
     document.getElementById("month").textContent = today.getMonth() + 1;
