@@ -1,0 +1,68 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900"/>
+  <title>오늘 날짜</title>
+  <style>
+    body {
+      background-color: white;
+      font-family: 'Lato', sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    #dateBox {
+      display: inline-block;
+      padding: 30px;
+      background: #276FBF;
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .label {
+      font-size: 1em;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .date {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+
+    .day {
+      margin-top: 10px;
+      font-size: 1.2em;
+      color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="dateBox">
+    <div class="label">오늘 날짜</div>
+    <div id="today" class="date"></div>
+    <div id="dayOfWeek" class="day"></div>
+  </div>
+
+  <script>
+    const today = new Date();
+
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1; // 0부터 시작
+    const date = today.getDate();
+
+    const weekdays = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
+    const day = weekdays[today.getDay()];
+
+    document.getElementById("today").textContent = `${year}년 ${month}월 ${date}일`;
+    document.getElementById("dayOfWeek").textContent = `(${day})`;
+  </script>
+
+</body>
+</html>
