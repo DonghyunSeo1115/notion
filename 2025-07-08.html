@@ -26,21 +26,6 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 1em;
       color: #183059;
-    }
-
-    .year {
-      background-color: #eeeeee;
-    }
-
-    .month {
-      background-color: #eeeeee;
-    }
-
-    .day {
-      background-color: #eeeeee;
-    }
-
-    .weekday {
       background-color: #eeeeee;
     }
 
@@ -74,10 +59,13 @@
 
   <script>
     const today = new Date();
+
     const weekdays = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+    const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN',
+                    'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 
     document.getElementById("year").textContent = today.getFullYear();
-    document.getElementById("month").textContent = today.getMonth() + 1;
+    document.getElementById("month").textContent = months[today.getMonth()];
     document.getElementById("date").textContent = today.getDate();
     document.getElementById("weekday").textContent = weekdays[today.getDay()];
   </script>
